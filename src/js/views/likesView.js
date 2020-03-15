@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {elements} from './base';
 import {limitRecipeTittle} from './searchView'
 
@@ -32,3 +33,5 @@ export const deleteLike = id => {
     const el = document.querySelector(`.likes__link[href="#${id}"]`).parentElement;
     if(el) el.parentElement.removeChild(el);
 };
+=======
+>>>>>>> parent of 7851d77... renderlike

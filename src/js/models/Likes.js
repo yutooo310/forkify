@@ -6,6 +6,7 @@ export default class Likes {
     addLike(id, title, publisher, image) {
         const like = { id, title, publisher, image};
         this.likes.push(like);
+        return like;
     }
     
     deleteLike (id) {
