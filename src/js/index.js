@@ -151,7 +151,7 @@ const controlLike = () => {
     // User HAS yet liked current recipe        
     } else {
         // remove the like to the state
-        state.likes.deletLike(currentID);
+        state.likes.deleteLike(currentID);
         // Toggle the like button
 
         // remove like from UI list
