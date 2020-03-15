@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-import {elements} from './base';
-import {limitRecipeTittle} from './searchView'
+import { elements } from './base';
+import { limitRecipeTittle } from './searchView'
 
 export const toggleLikeBtn = isLiked => {
     const iconString = isLiked ? 'icon-heart' : 'icon-heart-outlined';
@@ -33,5 +32,3 @@ export const deleteLike = id => {
     const el = document.querySelector(`.likes__link[href="#${id}"]`).parentElement;
     if(el) el.parentElement.removeChild(el);
 };
-=======
->>>>>>> parent of 7851d77... renderlike
