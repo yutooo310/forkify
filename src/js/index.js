@@ -18,8 +18,6 @@ import { elements, renderLoader, clearLoader} from './views/base';//DOM
 */ 
 
 const state = {};
-window.state = state;
-
 //-----search-----//
 const controlSearch = async () => {
     // 1 get query form the view
@@ -69,7 +67,6 @@ elements.searchResPages.addEventListener('click', e => {
 const  controlRecipe = async () => {
     // get id from url
     const id = window.location.hash.replace(`#`, ``);
-    console.log(id); 
 
     if(id) {
         // prepare ui for change
@@ -138,11 +135,6 @@ elements.shopping.addEventListener('click', e => {
 });
 
 //-----Like-----//
-//testing
-state.likes = new Likes();
-likesView.toggleLikeMenu(state.likes.getNumLikes());
-///////////////////////////////////
-
 const controlLike = () => {
     if(!state.likes) state.likes = new Likes();
     const currentID = state.recipe.id;
@@ -168,6 +160,19 @@ const controlLike = () => {
     likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
 
+// restore liked recipes on page load
+window.addEventListener('load', () => {
+    state.likes = new Likes();
+
+    // restore likes
+    state.likes.readStorage();
+
+    // toggle like menu button
+    likesView.toggleLikeMenu(state.likes.getNumLikes());
+
+    // render the existing likes
+    state.likes.likes.forEach(like => likesView.renderLike(like));
+});
 
 
 // Handling recipe button clicks
@@ -191,5 +196,3 @@ elements.recipe.addEventListener('click', e => {
     }
     // console.log(state.recipe.ingredients);
 });
-
-window.l = new List();
