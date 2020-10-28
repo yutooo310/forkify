@@ -1,2 +1,3 @@
 # forkify
-final project of JavaScript course from Udemy
+
+Website create by Vanilla JavaScript.
