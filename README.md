@@ -1,3 +1,3 @@
 # forkify
 
-Website create by Vanilla JavaScript.
+Website create with Vanilla JavaScript(ES5).
